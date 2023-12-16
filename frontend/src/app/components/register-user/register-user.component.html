@@ -1,0 +1,45 @@
+<div class="body">
+  <div class="register-container">
+    <div class="register-container-header">
+      <h2>Contacto de Soporte!</h2>
+    </div>
+    <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)" class="register-container-form">
+      <div class="form-group" id="userName">
+        <label class="form-label" for="name">Nombre completo</label>
+        <input ngModel type="text" name="name" class="form-control" autofocus>
+        <span *ngIf="errors.name" class="form-errors">{{errors.name}}</span>
+      </div>
+      <div class="form-group" id="companyName">
+        <label class="form-label" for="company_name">Nombre de la empresa</label>
+        <input type="text" ngModel name="company_name" class="form-control">
+        <span *ngIf="errors.company_name" class="form-errors">{{errors.company_name}}</span>
+      </div>
+      <div class="form-group" id="email">
+        <label class="form-label" for="email">Correo electrónico</label>
+        <input type="text" ngModel name="email" class="form-control">
+        <span *ngIf="errors.email" class="form-errors">{{errors.email}}</span>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="phone">Teléfono</label>
+        <input type="text" ngModel name="phone" class="form-control">
+        <span *ngIf="errors.phone.length != 0" class="form-errors">{{errors.phone}}</span>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="category_id">Categoria</label>
+        <select class="form-select" name="pais" ngModel name="category_id">
+          <option *ngFor="let category of categories" [ngValue]="category.category_id">{{category.category_name}}
+          </option>
+        </select>
+        <span *ngIf="errors.category_id" class="form-errors">{{errors.category_id}}</span>
+      </div>
+      <div class="form-group" id="message">
+        <label class="form-label" for="message">Mensaje</label>
+        <textarea ngModel name="message" cols="30" rows="5" class="form-control"></textarea>
+        <span *ngIf="errors.message" class="form-errors">{{errors.message}}</span>
+        <span *ngIf="message.length != 0" class="form-submit">{{message}}</span>
+      </div>
+      <button type="submit" class="register-container-form-button">
+        <fa-icon [icon]="send"></fa-icon> Enviar</button>
+    </form>
+  </div>
+</div>
