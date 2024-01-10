@@ -12,7 +12,7 @@ Deberemos crear un archivo .env con `touch .env` en donde deben agregarse las si
 > DATABASE_USER = Usuario.<br>
 > DATABASE_PASSWORD = Contraseña.<br>
 > DATABASE_NAME = Nombre que queramos colocarle a la base de datos.<br>
-> DATABASE_PORT = Puerto donde se aloja el servidor de base de datos (Ejemplo para MySQL: 3306.</p>
+> DATABASE_PORT = Puerto donde se aloja el servidor de base de datos MySQL.</p>
 
 Una vez creado deberemos ejecutar el espacio de migraciones para poder tener la base de datos en nuestro servidor
 
